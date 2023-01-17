@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body{
+            font-family: sans-serif;
+        }
+    </style>
+    <title>JSON</title>
+</head>
+<body>
+    <h1>Js Api Project</h1>
+    <h3>Javascrpt object Notation</h3>
+
+    <ul id="users-container">
+
+    </ul>
+
+
+    <input type="text" name="title" id="title" placeholder="Enter your title">
+    <br><br>
+    <input type="text" name="body" id="body" placeholder="Enter Your post Body">
+    <br><br>
+    <button id="Submit">Submit</button>
+
+
+
+    <script>
+
+
+    //   fetch('https://jsonplaceholder.typicode.com/users')
+    //   .then(response => response.json())
+    //   .then(peopleData => displayUsers(peopleData));
+
+
+    //   function displayUsers(people){
+    //     const peopleName=people.map(user=>user.phone);
+
+
+    //     const ul=document.getElementById("users-container");
+
+    //     for(let i=0; i<peopleName.length; i++){
+    //        const username=peopleName[i];
+    //        const li=document.createElement('li');
+    //        li.innerText=username;
+    //        ul.appendChild(li)
+
+    //     }
+    //   }
+
+ document.getElementById('Submit').addEventListener('click', function(){
+    const title=document.getElementById('title').value;
+    const body=document.getElementById('body').value;
+    
+ });
+     
+  function newPostToServer(){
+    
+    fetch('https://jsonplaceholder.typicode.com/posts', {
+     method: 'POST',
+     body: JSON.stringify({
+
+    }),
+    headers: {
+    'Content-type': 'application/json; charset=UTF-8',
+   },
+   })
+   .then((response) => response.json())
+   .then((json) => console.log(json))
+   .catch(error => alert("Try Gain Please"))
+
+
+
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // const student={
+        //     id:12,
+        //     name:"Jahid",
+        //     marks:[10,30,60,98],
+        //     favoratesub:{
+        //         name:"English",
+        //         topic:"Grammer",
+        //     }
+        // };
+        // console.log(student)
+        // const studentJSON=JSON.stringify(student)
+        // console.log(studentJSON);
+
+        // const studentObject=JSON.parse(studentJSON);
+        // console.log(studentObject);
+
+    
+        
+    </script>
+</body>
+</html>
